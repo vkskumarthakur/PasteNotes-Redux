@@ -4,7 +4,7 @@ const Cards = () => {
   return (
     <>
       <div className="flex gap-3 justify-start flex-wrap lg:flex-row md:flex-col">
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>
@@ -52,7 +52,7 @@ const Cards = () => {
           </div>
           <div className="paste-pin w-4 h-4 rounded-full bg-red-500 absolute top-1 left-1"></div>
         </div>
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>
@@ -100,7 +100,7 @@ const Cards = () => {
           </div>
           <div className="paste-pin w-4 h-4 rounded-full bg-red-500 absolute top-1 left-1"></div>
         </div>
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>
@@ -148,7 +148,7 @@ const Cards = () => {
           </div>
           <div className="paste-pin w-4 h-4 rounded-full bg-red-500 absolute top-1 left-1"></div>
         </div>
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>
@@ -196,7 +196,7 @@ const Cards = () => {
           </div>
           <div className="paste-pin w-4 h-4 rounded-full bg-red-500 absolute top-1 left-1"></div>
         </div>
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>
@@ -244,7 +244,7 @@ const Cards = () => {
           </div>
           <div className="paste-pin w-4 h-4 rounded-full bg-red-500 absolute top-1 left-1"></div>
         </div>
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>
@@ -292,7 +292,7 @@ const Cards = () => {
           </div>
           <div className="paste-pin w-4 h-4 rounded-full bg-red-500 absolute top-1 left-1"></div>
         </div>
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>
@@ -340,7 +340,7 @@ const Cards = () => {
           </div>
           <div className="paste-pin w-4 h-4 rounded-full bg-red-500 absolute top-1 left-1"></div>
         </div>
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>
@@ -388,7 +388,7 @@ const Cards = () => {
           </div>
           <div className="paste-pin w-4 h-4 rounded-full bg-red-500 absolute top-1 left-1"></div>
         </div>
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>
@@ -436,7 +436,7 @@ const Cards = () => {
           </div>
           <div className="paste-pin w-4 h-4 rounded-full bg-red-500 absolute top-1 left-1"></div>
         </div>
-        <div className="card-main-container bg-yellow-100 p-2 rounded-md flex-1 min-w-80 my-3  border-2 border-black min-h-40 relative">
+        <div className="card-main-container bg-yellow-100 p-2 rounded-md md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative">
           <div className="paste-card" style={{ minHeight: "inherit" }}>
             <div className="card-title font-bold border-b border-dashed border-yellow-500 flex justify-between items-center group py-2">
               <p>Hostinger Account Details</p>

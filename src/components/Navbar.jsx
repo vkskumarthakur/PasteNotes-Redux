@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold flex flex-row-reverse items-center gap-3">
-          <span>Paste Here</span>
+          <span className="hidden md:block">Paste Here</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -23,7 +23,7 @@ const Navbar = () => {
             <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
           </svg>
         </div>
-        <div className="flex items-center justify-start bg-white rounded-md p-1 gap-3">
+        <div className="flex items-center justify-start bg-white rounded-md p-1 gap-3 flex-1 ms-5 md:mx-5">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search"
-            className="p-1 outline-none w-96"
+            className="p-1 outline-none w-20 md:w-96"
           />
         </div>
         <ul className="flex space-x-4 items-center">
@@ -70,7 +70,10 @@ const Navbar = () => {
               </svg>
             </div>
           </li>
-          <li className="cursor-pointer" title="Change The Layout">
+          <li
+            className="cursor-pointer hidden md:block"
+            title="Change The Layout"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
