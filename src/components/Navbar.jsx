@@ -13,10 +13,10 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="#fef9c3"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-copy-check"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-copy-check"
           >
             <path d="m12 15 2 2 4-4" />
             <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
@@ -32,10 +32,10 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="#dfdfdd"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-search"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-search"
             >
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.3-4.3" />
@@ -60,9 +60,9 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#eaf499"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-plus group-hover:stroke-yellow-500"
               >
                 <path d="M5 12h14" />
@@ -78,10 +78,10 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="#eaf499"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-layout-grid"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-layout-grid"
             >
               <rect width="7" height="7" x="3" y="3" rx="1" />
               <rect width="7" height="7" x="14" y="3" rx="1" />
