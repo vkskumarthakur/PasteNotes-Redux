@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-gray-800 p-4 sticky top-0 z-20">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold flex flex-row-reverse items-center gap-3">
           <span className="hidden md:block">Paste Here</span>
@@ -92,13 +96,58 @@ const Navbar = () => {
               <rect width="7" height="7" x="3" y="14" rx="1" />
             </svg>
           </li>
-          <li>
-            <div className="avatar w-10 h-10 border-[#fef9c3] border-2 rounded-full overflow-hidden">
+          <li className="relative">
+            <div
+              className="avatar w-10 h-10 border-[#fef9c3] border-2 rounded-full overflow-hidden"
+              onClick={toggleMenu}
+            >
               <img
                 src="https://img.freepik.com/premium-photo/3d-avatar-boy-character_914455-603.jpg"
                 className="w-auto cursor-pointer"
               />
             </div>
+            {isMenuOpen && (
+              <div className="absolute top-18 right-0 m-auto rounded-md w-32 bg-yellow-100 p-2 z-10 flex flex-col gap-1 shadow-md">
+                <div className="flex items-center justify-center gap-3 cursor-pointer hover:bg-white p-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={18}
+                    height={18}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-user-round"
+                  >
+                    <circle cx={12} cy={8} r={5} />
+                    <path d="M20 21a8 8 0 0 0-16 0" />
+                  </svg>
+                  <span>Profile</span>
+                </div>
+                <div className="flex items-center justify-center gap-3 cursor-pointer hover:bg-white p-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={18}
+                    height={18}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-log-out"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    <polyline points="16 17 21 12 16 7" />
+                    <line x1={21} x2={9} y1={12} y2={12} />
+                  </svg>
+
+                  <span>Logout</span>
+                </div>
+              </div>
+            )}
           </li>
         </ul>
       </div>
