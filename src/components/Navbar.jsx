@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,25 +9,27 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 p-4 sticky top-0 z-20">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-bold flex flex-row-reverse items-center gap-3">
-          <span className="hidden md:block">Paste Here</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fef9c3"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-copy-check"
-          >
-            <path d="m12 15 2 2 4-4" />
-            <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
-          </svg>
-        </div>
+        <Link to={"/"}>
+          <div className="text-white font-bold flex flex-row-reverse items-center gap-3">
+            <span className="hidden md:block">Paste Here</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fef9c3"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-copy-check"
+            >
+              <path d="m12 15 2 2 4-4" />
+              <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+            </svg>
+          </div>
+        </Link>
         <div className="flex items-center justify-start bg-white rounded-md p-1 gap-3 flex-1 ms-5 md:mx-5">
           <div>
             <svg
@@ -48,7 +51,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search"
-            className="p-1 outline-none w-20 md:w-96"
+            className="p-1 outline-none w-20 md:w-full"
           />
         </div>
         <ul className="flex space-x-4 items-center">
@@ -108,25 +111,27 @@ const Navbar = () => {
             </div>
             {isMenuOpen && (
               <div className="absolute top-18 right-0 m-auto rounded-md w-32 bg-yellow-100 p-2 z-10 flex flex-col gap-1 shadow-md">
-                <div className="flex items-center justify-center gap-3 cursor-pointer hover:bg-white p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={18}
-                    height={18}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-user-round"
-                  >
-                    <circle cx={12} cy={8} r={5} />
-                    <path d="M20 21a8 8 0 0 0-16 0" />
-                  </svg>
-                  <span>Profile</span>
-                </div>
-                <div className="flex items-center justify-center gap-3 cursor-pointer hover:bg-white p-2">
+                <Link to={"/profile"}>
+                  <div className="flex items-center justify-center gap-3 cursor-pointer hover:bg-white p-2 rounded-md">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={18}
+                      height={18}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-user-round"
+                    >
+                      <circle cx={12} cy={8} r={5} />
+                      <path d="M20 21a8 8 0 0 0-16 0" />
+                    </svg>
+                    <span>Profile</span>
+                  </div>
+                </Link>
+                <div className="flex items-center justify-center gap-3 cursor-pointer hover:bg-white p-2 rounded-md">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={18}
