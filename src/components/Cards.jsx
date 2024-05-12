@@ -1,13 +1,42 @@
 import React from "react";
 import notesdata from "./NotesData";
+import { useDispatch, useSelector } from "react-redux";
+import { globalAction } from "../Redux/action";
+import toast from "react-hot-toast";
 
 const Cards = () => {
+  const dispatch = useDispatch();
+  const { todolist, viewType } = useSelector((state) => state.todo);
+
+  console.log(viewType, "viewType");
+
+  const handleDeleteTodo = (id) => {
+    dispatch(globalAction("DELETE_TO_DO", { id }));
+    toast.success("To do list deleted");
+  };
+
+  const handleUpdateTodo = (id) => {
+    dispatch(
+      globalAction("UPDATE_TO_DO", {
+        id: id,
+        title: "Changed Facebook Password",
+        content: "check reducer update",
+        created: "12 April 2024",
+      })
+    );
+    toast.success("To do list updated");
+  };
+
+  const dynamicListWrapperClassName =
+    viewType === "grid"
+      ? "flex gap-3 justify-start flex-wrap lg:flex-row md:flex-col"
+      : "flex gap-3 justify-start flex-wrap flex-col";
   return (
     <>
-      <div className="flex gap-3 justify-start flex-wrap lg:flex-row md:flex-col">
-        {notesdata.map((notes, key) => (
+      <div className={dynamicListWrapperClassName}>
+        {todolist.map((notes, key) => (
           <div
-            key={notes.id}
+            key={key}
             className="card-main-container bg-yellow-100 p-2 rounded-md w-full md:flex-1 md:min-w-80 my-3  border-2 border-black min-h-40 relative"
           >
             <div className="paste-card" style={{ minHeight: "inherit" }}>
@@ -16,6 +45,9 @@ const Cards = () => {
                 <div
                   className="rounded-full cursor-pointer group transition-all delay-75 p-2 hover:bg-white"
                   title="Delete Note"
+                  onClick={() => {
+                    handleUpdateTodo(notes.id);
+                  }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

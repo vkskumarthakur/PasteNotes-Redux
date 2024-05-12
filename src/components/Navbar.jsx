@@ -1,11 +1,41 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { globalAction } from "../Redux/action";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const { todolist, viewType } = useSelector((state) => state.todo);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const lastTodo = todolist[todolist.length - 1];
+  const lastId = lastTodo ? Number(lastTodo.id) : 0; // Parse ID as number
+
+  const newId = lastId + 1;
+  const handleAddTodo = () => {
+    dispatch(
+      globalAction("ADD_TO_DO", {
+        id: newId,
+        title: "New added",
+        content: "check reducer update",
+        created: "12 April 2024",
+      })
+    );
+    toast.success("New to do added");
+  };
+
+  console.log(todolist, "todolist");
+
+  const handleUpdateViewType = () => {
+    dispatch(
+      globalAction("CHANGE_VIEW_TYPE", viewType === "grid" ? "list" : "grid")
+    );
+  };
+
   return (
     <nav className="bg-gray-800 p-4 sticky top-0 z-20">
       <div className="container mx-auto flex justify-between items-center">
@@ -59,6 +89,7 @@ const Navbar = () => {
             <div
               className="note-add-icon hover:bg-[#f8f6f7] rounded-full cursor-pointer group transition-all p-1"
               title="Paste Notes"
+              onClick={handleAddTodo}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +111,7 @@ const Navbar = () => {
           <li
             className="cursor-pointer hidden md:block"
             title="Change The Layout"
+            onClick={handleUpdateViewType}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

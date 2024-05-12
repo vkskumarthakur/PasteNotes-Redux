@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         </Routes>
       </Router>
       <Footer />
+      <Toaster />
     </div>
   );
 };
