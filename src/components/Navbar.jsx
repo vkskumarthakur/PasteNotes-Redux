@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { globalAction } from "../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { todolist, viewType } = useSelector((state) => state.todo);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,6 +37,11 @@ const Navbar = () => {
     dispatch(
       globalAction("CHANGE_VIEW_TYPE", viewType === "grid" ? "list" : "grid")
     );
+  };
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/search/${searchTerm}`);
+    setSearchTerm("");
   };
 
   return (
@@ -78,11 +86,15 @@ const Navbar = () => {
               <path d="m21 21-4.3-4.3" />
             </svg>
           </div>
-          <input
-            type="text"
-            placeholder="Search"
-            className="p-1 outline-none w-20 md:w-full"
-          />
+          <form onSubmit={handleSearch} className="w-full">
+            <input
+              type="text"
+              placeholder="Search"
+              className="p-1 outline-none w-20 md:w-full"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </form>
         </div>
         <ul className="flex space-x-4 items-center">
           <li>
@@ -144,7 +156,10 @@ const Navbar = () => {
             {isMenuOpen && (
               <div className="absolute top-18 right-0 m-auto rounded-md w-32 bg-yellow-100 p-2 z-10 flex flex-col gap-1 shadow-md">
                 <Link to={"/profile"}>
-                  <div className="flex items-center justify-center gap-3 cursor-pointer hover:bg-white p-2 rounded-md">
+                  <div
+                    className="flex items-center justify-center gap-3 cursor-pointer hover:bg-white p-2 rounded-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={18}

@@ -1,5 +1,4 @@
 import React from "react";
-import notesdata from "./NotesData";
 import { useDispatch, useSelector } from "react-redux";
 import { globalAction } from "../Redux/action";
 import toast from "react-hot-toast";
