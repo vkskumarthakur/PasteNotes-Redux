@@ -18,7 +18,7 @@ const SearchResult = () => {
   return (
     <section className="max-w-[90%] mx-auto w-[100%] my-5">
       <h1 className="section-title text-white uppercase font-bold">
-        your searched notes.
+        Showing result for <span className="text-yellow-300">{term} </span>
       </h1>
       <Cards notesdata={filterData} />
     </section>

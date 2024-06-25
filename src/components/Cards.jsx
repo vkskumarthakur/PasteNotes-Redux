@@ -11,7 +11,7 @@ const Cards = () => {
 
   const handleDeleteTodo = (id) => {
     dispatch(globalAction("DELETE_TO_DO", { id }));
-    toast.success("To do list deleted");
+    toast.success("Note Deleted");
   };
 
   const handleUpdateTodo = (id) => {
@@ -45,7 +45,7 @@ const Cards = () => {
                   className="rounded-full cursor-pointer group transition-all delay-75 p-2 hover:bg-white"
                   title="Delete Note"
                   onClick={() => {
-                    handleUpdateTodo(notes.id);
+                    handleDeleteTodo(notes.id);
                   }}
                 >
                   <svg

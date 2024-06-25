@@ -28,7 +28,7 @@ const Navbar = () => {
         created: "12 April 2024",
       })
     );
-    toast.success("New to do added");
+    toast.success("Note Pasted");
   };
 
   console.log(todolist, "todolist");
@@ -90,7 +90,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search"
-              className="p-1 outline-none w-20 md:w-full"
+              className="p-1 outline-none w-full"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
