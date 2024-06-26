@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 // import { Link } from "react-router-dom";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { globalAction } from "../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
   const { todolist, viewType } = useSelector((state) => state.todo);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -97,7 +98,10 @@ const Navbar = () => {
           </form>
         </div>
         <ul className="flex space-x-4 items-center">
-          <li>
+          {
+           location.pathname == "/" && (
+            <>
+              <li>
             <div
               className="note-add-icon hover:bg-[#f8f6f7] rounded-full cursor-pointer group transition-all p-1"
               title="Paste Notes"
@@ -143,6 +147,9 @@ const Navbar = () => {
               <rect width="7" height="7" x="3" y="14" rx="1" />
             </svg>
           </li>
+          </>
+            )
+          }
           <li className="relative">
             <div
               className="avatar w-10 h-10 border-[#fef9c3] border-2 rounded-full overflow-hidden"
