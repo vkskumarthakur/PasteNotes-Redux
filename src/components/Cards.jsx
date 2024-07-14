@@ -74,7 +74,7 @@ const Cards = () => {
               >
                 <p className="p-2">{notes.content}</p>
               </div>
-              <div className="card-footer mt-auto text-center text-gray-400 font-thin text-xs">
+              <div className="card-footer mt-auto text-center text-gray-400 font-normal text-xs">
                 {notes.created}
               </div>
             </div>

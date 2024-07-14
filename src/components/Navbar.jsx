@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-// import { Link } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
-import { globalAction } from "../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
+import { globalAction } from "../Redux/action";
+import TodoModal from "./ToDoModal";
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,33 +11,22 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const { todolist, viewType } = useSelector((state) => state.todo);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const lastTodo = todolist[todolist.length - 1];
-  const lastId = lastTodo ? Number(lastTodo.id) : 0; // Parse ID as number
-
-  const newId = lastId + 1;
   const handleAddTodo = () => {
-    dispatch(
-      globalAction("ADD_TO_DO", {
-        id: newId,
-        title: "New added",
-        content: "check reducer update",
-        created: "12 April 2024",
-      })
-    );
-    toast.success("New to do added");
+    setIsModalOpen(true); // Open the modal
   };
-
-  console.log(todolist, "todolist");
 
   const handleUpdateViewType = () => {
     dispatch(
       globalAction("CHANGE_VIEW_TYPE", viewType === "grid" ? "list" : "grid")
     );
   };
+
   const handleSearch = (e) => {
     e.preventDefault();
     navigate(`/search/${searchTerm}`);
@@ -195,7 +184,6 @@ const Navbar = () => {
                     <polyline points="16 17 21 12 16 7" />
                     <line x1={21} x2={9} y1={12} y2={12} />
                   </svg>
-
                   <span>Logout</span>
                 </div>
               </div>
@@ -203,6 +191,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      <TodoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </nav>
   );
 };
